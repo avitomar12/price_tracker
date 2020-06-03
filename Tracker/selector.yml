@@ -1,0 +1,12 @@
+Name:
+    xpath: '//*[@id="title"]'
+    type: Text
+Selling_price:
+    xpath: '//td[contains(concat(" ",normalize-space(@class)," ")," a-span12 ")]//span[contains(concat(" ",normalize-space(@class)," ")," a-size-medium ")]'
+    type: Text
+MRP:
+    xpath: '//span[contains(concat(" ",normalize-space(@class)," ")," priceBlockStrikePriceString ")]'
+    type: Text
+Review:
+    xpath: '//span[contains(concat(" ",normalize-space(@class)," ")," reviewCountTextLinkedHistogram ")]//a[contains(concat(" ",normalize-space(@class)," ")," a-popover-trigger ")]'
+    type: Text
