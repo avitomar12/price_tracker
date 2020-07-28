@@ -3,7 +3,7 @@ import requests
 import json
 import time 
 import csv
-e= Extractor.from_yaml_file('selector.yml')
+e= Extractor.from_yaml_file('/home/avi/Documents/work/price_tracker/Tracker/selector.yml')
 
 def scrape_(url):
     headers={
@@ -38,15 +38,16 @@ def save_data(data):
             writer.writerow(data)
     except IOError:
         print("I/O error")
-def main():
-    url= "https://www.amazon.in/Dell-Wired-Keyboard-Mouse-Combo/dp/B009DIX5QQ/ref=pd_rhf_gw_p_img_3?_encoding=UTF8&psc=1&refRID=RJVKQYPSM0JNA0ECSXEQ"
+def main(url):
+    #url= "https://www.amazon.in/Dell-Wired-Keyboard-Mouse-Combo/dp/B009DIX5QQ/ref=pd_rhf_gw_p_img_3?_encoding=UTF8&psc=1&refRID=RJVKQYPSM0JNA0ECSXEQ"
     data = scrape_(url)
     Time=time.time()
-    print(data)
+    #print(data)
     if data['Name']:
         data['time']=Time
-        save_data(data)
-import random
-while True:
-    main()
-    time.sleep(random.randint(5,10))
+        #save_data(data)
+    return data
+#import random
+#while True:
+#    main()
+#    time.sleep(random.randint(5,10))
