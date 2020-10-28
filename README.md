@@ -6,9 +6,13 @@ Store the infromation in database(Need to implement)
 
 ## Usage
 
+First run the app.py 
+
 ```bash
 python app.py
 ```
+
+Use postman to post/get the request to the localhost url.
 
 ## Contribution
 
