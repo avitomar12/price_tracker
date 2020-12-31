@@ -21,7 +21,7 @@ def home():
 def tracker():
     if request.method=='POST':
         url=request.form['url']
-        pointer=request.form['tracker_name']
+        pointer=checkurl(url)
         print(pointer)
         if pointer=='1':
             data=amazon.main(url)
@@ -39,6 +39,12 @@ def graph():
     response = make_response(json.dumps(data))
     response.content_type = 'application/json'
     return "hello"
-
+def checkurl(url):
+    ul=url.split(".")
+    if "amazon" in ul:
+        return '1'
+    else:
+        return '0'
+    
 if __name__ == '__main__':
    app.run()

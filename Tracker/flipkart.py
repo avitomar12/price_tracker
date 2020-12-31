@@ -19,11 +19,11 @@ def main(url):
 
     Price= soup.findAll('div',{"class":Price_selector_class})
     
-    name_=Name[0].get_text().encode('ascii','ignore')
+    name_=Name[0].get_text()
     time_=time.time()
-    mrp=(MRP[0].get_text()).encode('ascii','ignore')
-    price=(Price[0].get_text()).encode('ascii','ignore')
-    review_=(Review[0].get_text()).encode('ascii','ignore')
+    mrp=(MRP[0].get_text())
+    price=(Price[0].get_text())
+    review_=(Review[0].get_text())
     data={'Name': name_, 'time':time_,'MRP':mrp , 'price' : price,'Review' : review_}
     return data
 #while True:
